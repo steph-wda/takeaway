@@ -33,3 +33,23 @@ console.log(canWin(7))//correct
 console.log(canWin(8)) //correct
 console.log(canWin(9)) //incorrect - need to spend more time figure out why the result is wrong
 console.log(canWin(10)) //incorrect
+
+/*  soultion
+const canWin = n => {
+    // none of the legal moves are under two
+    if (n < 2) {
+        return false
+    }
+
+    let legalMoves = [2, 3, 5]
+
+    // if canWin is false for the opponent, then we win
+    legalMoves.forEach(move => {
+        if (!canWin(n - move)) {
+            return true
+        }
+    })
+
+    // if we can't win from above, we lose
+    return false
+}*/
